@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up - Mobile Legends Beginner's Guide</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header sticky-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-text">⚔️</div>
+                </div>
+                <h1 class="brand-title">Level Up</h1>
+            </div>
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="pages/lanes-guide.html" class="nav-link">Lanes Guide</a></li>
+                    <li><a href="pages/heroes.html" class="nav-link">Heroes</a></li>
+                    <li><a href="pages/items.html" class="nav-link">Items</a></li>
+                    <li><a href="pages/tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="pages/patch-notes.html" class="nav-link">Patch Notes</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text animate-fade-in">
+                <h2 class="hero-title">Welcome, Summoner!</h2>
+                <p class="hero-subtitle">Master the Land of Dawn and climb the ranks like a pro</p>
+                <p class="hero-description">Learn everything about Mobile Legends: strategies, heroes, items, and the meta game. Your journey to glory starts here!</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('video-container').scrollIntoView({behavior: 'smooth'})">Watch Tutorial</button>
+                    <button class="btn btn-secondary" onclick="goToPage('pages/lanes-guide.html')">Start Learning</button>
+                </div>
+            </div>
+            
+            <div class="hero-video-container" id="video-container">
+                <div class="video-wrapper animate-slide-up">
+                    <div class="video-inner">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/kxqkoNRIzl4" 
+                            title="Mobile Legends Tutorial"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📍</div>
+                <h3>Lane Guides</h3>
+                <p>Master every lane with strategies for macro and micro plays</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">⚔️</div>
+                <h3>Hero Database</h3>
+                <p>Explore heroes with builds, counters, and meta analysis</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🛡️</div>
+                <h3>Item Guide</h3>
+                <p>Learn optimal item builds for every hero and situation</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📊</div>
+                <h3>Tier Lists</h3>
+                <p>Check current meta and create your personal tier lists</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="quick-stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h4>135</h4>
+                <p>Heroes to Master</p>
+            </div>
+            <div class="stat-item">
+                <h4>50+</h4>
+                <p>Items Listed</p>
+            </div>
+            <div class="stat-item">
+                <h4>6</h4>
+                <p>Unique Lanes</p>
+            </div>
+            <div class="stat-item">
+                <h4>∞</h4>
+                <p>Ways to Win</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Dominate the Land of Dawn?</h2>
+            <p>Choose your role and start your journey to becoming a legendary summoner</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="goToPage('pages/lanes-guide.html')">Explore Lanes</button>
+                <button class="btn btn-secondary" onclick="goToPage('pages/heroes.html')">Browse Heroes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Level Up - Mobile Legends Beginner's Guide. Learn, Master, Dominate.</p>
+            <p>Not affiliated with Moonton. Mobile Legends is property of Moonton Games.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
