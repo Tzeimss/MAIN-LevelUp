@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanes Guide - Level Up</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-text">⚔️</div>
+                </div>
+                <h1 class="brand-title">Level Up</h1>
+            </div>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="lanes-guide.html" class="nav-link active">Lanes Guide</a></li>
+                    <li><a href="heroes.html" class="nav-link">Heroes</a></li>
+                    <li><a href="items.html" class="nav-link">Items</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="patch-notes.html" class="nav-link">Patch Notes</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <h1 class="page-title">🗺️ Lanes Guide</h1>
+        <p class="page-subtitle">Master every lane in Mobile Legends with our comprehensive guides</p>
+
+        <!-- Lane Selection Tabs -->
+        <div class="lanes-tabs" id="lanesTabs">
+            <button class="lane-tab-btn active" data-lane="exp">EXP Lane</button>
+            <button class="lane-tab-btn" data-lane="gold">Gold Lane</button>
+            <button class="lane-tab-btn" data-lane="jungle">Jungle</button>
+            <button class="lane-tab-btn" data-lane="mid">Mid Lane</button>
+            <button class="lane-tab-btn" data-lane="roam">Roam</button>
+        </div>
+
+        <!-- EXP Lane -->
+        <div class="lane-content active" id="lane-exp">
+            <div class="lane-header animate-fade-in">
+                <h2>Experience Lane (Top Lane)</h2>
+                <p class="lane-role">The fighter's domain - Solo lane focused on farming and team fights</p>
+            </div>
+
+            <div class="lane-grid">
+                <div class="lane-section animate-on-scroll">
+                    <h3>👨‍💼 Role Overview</h3>
+                    <p>The EXP lane is a solo lane responsible for:</p>
+                    <ul>
+                        <li>Farming and gaining experience solo</li>
+                        <li>Rotating to help jungle ganks</li>
+                        <li>Trading 1v1 with enemy EXP laner</li>
+                        <li>Securing kills in team fights</li>
+                        <li>Controlling the top part of the map</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎯 Meta Heroes</h3>
+                    <ul>
+                        <li><strong>Fighters:</strong> Gloo, Lapu-Lapu, Thamuz, Yu Zhong</li>
+                        <li><strong>Tanks:</strong> Grock, Kalea, Hilda</li>
+                        <li><strong>Assassins:</strong> Yi sun-sin, Suyou, Nolan</li>
+                        <li><strong>Mages:</strong> Zetian, Kadita</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>💡 Macro Play</h3>
+                    <div class="macro-tips">
+                        <div class="tip-item">
+                            <strong>Early Game:</strong> Focus on farming and hitting level 2 before enemy. Avoid extended trades.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Mid Game:</strong> Rotate to midlane for team fights. Control blue/red buff areas.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Late Game:</strong> Lead team fights and protect damage dealers from enemy assassins.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎮 Micro Play (1v1 Trading)</h3>
+                    <div class="micro-tips">
+                        <div class="tip-item">
+                            <strong>At Level 2:</strong> Land your cc or damage combo after getting advantage
+                        </div>
+                        <div class="tip-item">
+                            <strong>Skillshot Juking:</strong> Move unpredictably to avoid enemy spells
+                        </div>
+                        <div class="tip-item">
+                            <strong>Kiting:</strong> Keep distance while dealing damage, especially against melees
+                        </div>
+                        <div class="tip-item">
+                            <strong>All-in Timing:</strong> Commit when you have more HP or cooldown advantage
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>⛏️ Farming Tips</h3>
+                    <ul>
+                        <li>Last-hit minions for gold (watch for the kill shot)</li>
+                        <li>Push lane after getting kills - deny enemy CS</li>
+                        <li>When behind, farm safely near tower with items that help escape</li>
+                        <li>Prioritize jungle camps when lane is pushed</li>
+                        <li>Aim for 5-6 CS per minute in early game</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gold Lane -->
+        <div class="lane-content" id="lane-gold">
+            <div class="lane-header animate-fade-in">
+                <h2>Gold Lane (Bot Lane)</h2>
+                <p class="lane-role">The carry's domain - Duo lane focused on farming and scaling</p>
+            </div>
+
+            <div class="lane-grid">
+                <div class="lane-section animate-on-scroll">
+                    <h3>👥 Role Overview</h3>
+                    <p>The Gold lane consists of 2 heroes:</p>
+                    <ul>
+                        <li><strong>Marksman/ADC:</strong> Main farmer, deals sustained damage</li>
+                        <li><strong>Support:</strong> Protects ADC, provides utility and CC</li>
+                        <li>Focus on CS and scaling into late game</li>
+                        <li>Trading efficiently with enemy lane</li>
+                        <li>Winning objective fights near Lithowanderer</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎯 Meta Heroes</h3>
+                    <ul>
+                        <li><strong>Marksmen:</strong> Ixia, Yi sun-sin, Claude, Granger</li>
+                        <li><strong>Supports:</strong> Angela, Estes, Floryn, Kaja</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>💡 Macro Play</h3>
+                    <div class="macro-tips">
+                        <div class="tip-item">
+                            <strong>Early Game:</strong> Farm safely, respect jungle ganks. Support provides vision.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Mid Game:</strong> Group for Lithowanderer fights. ADC farms jungle camps.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Late Game:</strong> Position safely in fights. Use range advantage to deal damage.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎮 Micro Play (Lane Trading)</h3>
+                    <div class="micro-tips">
+                        <div class="tip-item">
+                            <strong>Support Role:</strong> Engage when ADC can follow up with damage
+                        </div>
+                        <div class="tip-item">
+                            <strong>ADC Positioning:</strong> Stay behind support, attack from range
+                        </div>
+                        <div class="tip-item">
+                            <strong>Sync:</strong> Both must engage together - don't fight separately
+                        </div>
+                        <div class="tip-item">
+                            <strong>Vision:</strong> Support should place wards and scout jungle</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>⛏️ Farming Tips</h3>
+                    <ul>
+                        <li>ADC prioritizes minion kills - this is their main gold source</li>
+                        <li>Support roams to help mid lane after securing lane</li>
+                        <li>Farm jungle camps together when lane is pushed</li>
+                        <li>Share farm with ADC in team fights objective area</li>
+                        <li>Aim for 6+ CS per minute in early game</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jungle -->
+        <div class="lane-content" id="lane-jungle">
+            <div class="lane-header animate-fade-in">
+                <h2>🌳 Jungle</h2>
+                <p class="lane-role">The game's conductor - Gank pressure and resource control</p>
+            </div>
+
+            <div class="lane-grid">
+                <div class="lane-section animate-on-scroll">
+                    <h3>👨‍✈️ Role Overview</h3>
+                    <p>The jungler is the most impactful role:</p>
+                    <ul>
+                        <li>Farm jungle monsters for fast leveling</li>
+                        <li>Gank lanes to create kills and advantages</li>
+                        <li>Control objective timing (buffs, Crab, Lord)</li>
+                        <li>Counter-gank enemy jungle attempts</li>
+                        <li>Secure kills for laners to accelerate their farm</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎯 Meta Heroes</h3>
+                    <ul>
+                        <li><strong>Assassins:</strong> Suyou, Yi sun-sin, Hayabusa</li>
+                        <li><strong>Fighters:</strong> Yu Zhong, Lapu-Lapu, Gloo</li>
+                        <li><strong>Mages:</strong> Kagura, Zhuxin</li>
+                        <li><strong>Supports:</strong> Kaja, Minotaur</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>💡 Macro Play (Map Control)</h3>
+                    <div class="macro-tips">
+                        <div class="tip-item">
+                            <strong>Camp Clear Priority:</strong> Buff (1st) → Minions → Crab → Wolves → Raptors
+                        </div>
+                        <div class="tip-item">
+                            <strong>Gank Timing:</strong> After clearing buff, look for opportunities in lanes
+                        </div>
+                        <div class="tip-item">
+                            <strong>Objective Control:</strong> Secure Crab (7:00) and Lithowanderer fights
+                        </div>
+                        <div class="tip-item">
+                            <strong>Vision:</strong> Place wards in river and enemy jungle. Keep map pressure
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎮 Micro Play (Ganking)</h3>
+                    <div class="micro-tips">
+                        <div class="tip-item">
+                            <strong>Approach:</strong> Enter from unexpected angles to avoid laner's escape
+                        </div>
+                        <div class="tip-item">
+                            <strong>Timing:</strong> Gank when enemy laner is pushed out or low HP
+                        </div>
+                        <div class="tip-item">
+                            <strong>Execution:</strong> Use CC to lock target, secure kill quickly
+                        </div>
+                        <div class="tip-item">
+                            <strong>Follow-up:</strong> Don't over-commit. Leave if gank is failing
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>⛏️ Farming Tips</h3>
+                    <ul>
+                        <li>Always farm while waiting for gank opportunities</li>
+                        <li>Take kills from laners when possible - you need levels too</li>
+                        <li>Farm opposing jungle when enemy jungler ganks elsewhere</li>
+                        <li>Use buffs to spike in power - Red buff at level 4 = gank time</li>
+                        <li>Aim for level advantage over all laners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mid Lane -->
+        <div class="lane-content" id="lane-mid">
+            <div class="lane-header animate-fade-in">
+                <h2>Mid Lane (Center)</h2>
+                <p class="lane-role">The mage's domain - High impact damage and playmaking</p>
+            </div>
+
+            <div class="lane-grid">
+                <div class="lane-section animate-on-scroll">
+                    <h3>🧙 Role Overview</h3>
+                    <p>The mid laner is the team's primary damage dealer:</p>
+                    <ul>
+                        <li>Control center map and rotate to side lanes</li>
+                        <li>Farm efficiently and scale with items</li>
+                        <li>Deal area damage in team fights</li>
+                        <li>Support jungle with objectives</li>
+                        <li>Block enemy rotations with map pressure</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎯 Meta Heroes</h3>
+                    <ul>
+                        <li><strong>Mages:</strong> Luo Yi, Kagura, Pharsa, Harith</li>
+                        <li><strong>Burst Damage:</strong> Eudora, Zhask, Lunox</li>
+                        <li><strong>Control:</strong> Cecilion, Vale</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>💡 Macro Play</h3>
+                    <div class="macro-tips">
+                        <div class="tip-item">
+                            <strong>Early Game:</strong> Control lane with skill spam. Safe farm. Don't overextend.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Mid Game:</strong> Rotate to side lanes for kills. Group for Crab fights.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Late Game:</strong> Position at the back. Deal massive AoE damage in fights.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎮 Micro Play (Positioning)</h3>
+                    <div class="micro-tips">
+                        <div class="tip-item">
+                            <strong>Range Advantage:</strong> Use your long-range skills to poke enemies safely
+                        </div>
+                        <div class="tip-item">
+                            <strong>Escape Plan:</strong> Always know your escape route. Stay near allies.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Skill Rotation:</strong> Master your hero's combo for burst damage windows
+                        </div>
+                        <div class="tip-item">
+                            <strong>Mana Management:</strong> Conserve mana for team fights, not just laning
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>⛏️ Farming Tips</h3>
+                    <ul>
+                        <li>Farm with AoE skills when possible - mid lane has many minions</li>
+                        <li>Roam to side lanes after pushing wave</li>
+                        <li>Secure jungle camps with ranged skills</li>
+                        <li>Use mana-efficient builds to sustain farm</li>
+                        <li>Aim for 6+ CS per minute, more with farming builds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roam/Support -->
+        <div class="lane-content" id="lane-roam">
+            <div class="lane-header animate-fade-in">
+                <h2>Roam/Support</h2>
+                <p class="lane-role">The team's backbone - Vision and utility provider</p>
+            </div>
+
+            <div class="lane-grid">
+                <div class="lane-section animate-on-scroll">
+                    <h3>🛡️ Role Overview</h3>
+                    <p>The roamer enables teammates to win:</p>
+                    <ul>
+                        <li>Provide vision control across the map</li>
+                        <li>Enable kills with CC and setup</li>
+                        <li>Protect allies from being ganked</li>
+                        <li>Control objectives with team</li>
+                        <li>Sacrifice farm for team gold efficiency</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎯 Meta Heroes</h3>
+                    <ul>
+                        <li><strong>Support Mages:</strong> Yve, Kaja, Minotaur</li>
+                        <li><strong>Tanks:</strong> Tigreal, Akai, Grock</li>
+                        <li><strong>Utility:</strong> Estes, Sett, Alma</li>
+                    </ul>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>💡 Macro Play (Map Control)</h3>
+                    <div class="macro-tips">
+                        <div class="tip-item">
+                            <strong>Early Game:</strong> Provide vision. Counter-roam enemy support ganks.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Mid Game:</strong> Gank lanes to create kills. Set up ambushes in jungle.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Late Game:</strong> Scout objective areas. Protect team from ambushes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>🎮 Micro Play (CC & Setup)</h3>
+                    <div class="micro-tips">
+                        <div class="tip-item">
+                            <strong>Initiation:</strong> Lead fights with CC when teammates are ready
+                        </div>
+                        <div class="tip-item">
+                            <strong>Peeling:</strong> Protect carries from enemy assassins with CC/buffs
+                        </div>
+                        <div class="tip-item">
+                            <strong>Positioning:</strong> Stay with team. Don't wander alone.
+                        </div>
+                        <div class="tip-item">
+                            <strong>Sacrifice Play:</strong> Give yourself for the team when needed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lane-section animate-on-scroll">
+                    <h3>⛏️ Economy Tips</h3>
+                    <ul>
+                        <li>Let teammates take kills for gold efficiency</li>
+                        <li>Share jungle camps (don't farm, just help secure)</li>
+                        <li>Build utility items over damage items</li>
+                        <li>Focus on objectives, not personal farm</li>
+                        <li>Economy in roam = team farming resources safely</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- General Concepts -->
+        <section class="concepts-section">
+            <h2 class="section-title">General Lane Concepts</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card animate-on-scroll">
+                    <h3>📊 CS (Creep Score)</h3>
+                    <p><strong>What:</strong> Number of minions you've killed</p>
+                    <p><strong>Why:</strong> Each minion = gold. More CS = More items = Stronger</p>
+                    <p><strong>Goal:</strong> 6-8 CS per minute (early), 7-10 (mid), 8+ (late)</p>
+                </div>
+
+                <div class="concept-card animate-on-scroll">
+                    <h3>👁️ Vision Control</h3>
+                    <p><strong>What:</strong> Placing wards to see enemy movements</p>
+                    <p><strong>Why:</strong> Know when enemies are coming = Prevent ganks</p>
+                    <p><strong>Where:</strong> River bushes, jungle entry points, enemy buff areas</p>
+                </div>
+
+                <div class="concept-card animate-on-scroll">
+                    <h3>⚔️ Trading</h3>
+                    <p><strong>What:</strong> Exchanging damage with enemy laner</p>
+                    <p><strong>Why:</strong> Lower enemy HP = More pressure = Easier to gank</p>
+                    <p><strong>How:</strong> Trade when you have ability advantage or minion advantage</p>
+                </div>
+
+                <div class="concept-card animate-on-scroll">
+                    <h3>🎯 Cooldown Management</h3>
+                    <p><strong>What:</strong> Knowing when your spells are available again</p>
+                    <p><strong>Why:</strong> Cooldown advantage = Safe lane = Free farm</p>
+                    <p><strong>How:</strong> Wait for enemy CD to expire before trading</p>
+                </div>
+
+                <div class="concept-card animate-on-scroll">
+                    <h3>🔄 Wave Management</h3>
+                    <p><strong>What:</strong> Controlling how fast minion waves push</p>
+                    <p><strong>Why:</strong> Slow push = Farm safely. Fast push = Deny enemy CS</p>
+                    <p><strong>How:</strong> Kill minions at different rates to control wave</p>
+                </div>
+
+                <div class="concept-card animate-on-scroll">
+                    <h3>🌊 Gank Setups</h3>
+                    <p><strong>What:</strong> Setting up your laner to be ganked successfully</p>
+                    <p><strong>Why:</strong> Easy kills = Gold for team = Win faster</p>
+                    <p><strong>How:</strong> Push enemy under tower, call jungler, execute gank</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Level Up - Mobile Legends Beginner's Guide.</p>
+        </div>
+    </footer>
+
+    <style>
+        .lanes-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .lane-tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-dark-3);
+            color: var(--text-light);
+            border: 2px solid var(--text-muted);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lane-tab-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .lane-tab-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        .lane-content {
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .lane-content.active {
+            display: block;
+        }
+
+        .lane-header {
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+
+        .lane-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .lane-role {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .lane-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .lane-section {
+            background: var(--bg-dark-3);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .lane-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .lane-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lane-section li {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .lane-section li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .macro-tips, .micro-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tip-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-left: 3px solid var(--primary-color);
+            border-radius: 3px;
+            color: var(--text-light);
+        }
+
+        .tip-item strong {
+            color: var(--primary-color);
+        }
+
+        .concepts-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, var(--bg-dark-3), var(--bg-dark-2));
+            padding: 1.5rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .concept-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .concept-card p {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .concept-card strong {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            .lanes-tabs {
+                justify-content: center;
+            }
+
+            .lane-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        // Lane tab switching
+        document.querySelectorAll('.lane-tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lane = this.getAttribute('data-lane');
+                
+                // Update active button
+                document.querySelectorAll('.lane-tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update active content
+                document.querySelectorAll('.lane-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(`lane-${lane}`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

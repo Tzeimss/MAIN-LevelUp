@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes - Level Up</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-text">⚔️</div>
+                </div>
+                <h1 class="brand-title">Level Up</h1>
+            </div>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="lanes-guide.html" class="nav-link">Lanes Guide</a></li>
+                    <li><a href="heroes.html" class="nav-link active">Heroes</a></li>
+                    <li><a href="items.html" class="nav-link">Items</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="patch-notes.html" class="nav-link">Patch Notes</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <h1 class="page-title">⚔️ Heroes Database</h1>
+        <p class="page-subtitle">Master the Land of Dawn with our hero collection - Learn builds, counters, and strategies</p>
+
+        <!-- Filter Section -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterHeroes('all')">All Heroes</button>
+            <button class="filter-btn" onclick="filterHeroes('exp')">EXP Lane</button>
+            <button class="filter-btn" onclick="filterHeroes('gold')">Gold Lane</button>
+            <button class="filter-btn" onclick="filterHeroes('jungle')">Jungle</button>
+            <button class="filter-btn" onclick="filterHeroes('mid')">Mid Lane</button>
+            <button class="filter-btn" onclick="filterHeroes('roam')">Roam</button>
+        </div>
+
+        <!-- Heroes Grid -->
+        <div class="hero-grid" id="heroGrid">
+            <!-- EXP Lane Heroes -->
+            <div class="hero-card animate-on-scroll" data-lane="exp">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/ROGER.jpg" alt="Roger" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Roger</h3>
+                    <p class="hero-class">Fighter</p>
+                    <p class="hero-description">Versatile fighter with two forms - human and wolf. Great for solo plays and team fights.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Medium</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>1v1 Trading</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Area CC</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Grock, Chou, Akai</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="exp">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/CHOU.jpg" alt="Chou" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Chou</h3>
+                    <p class="hero-class">Fighter</p>
+                    <p class="hero-description">Mobile fighter with exceptional kiting and 1v1 potential. Great playmaker hero.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Hard</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Outplay Potential</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Teamfight CC</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Grock, CC Chain, Lancelot</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="exp">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/THAMUZ.jpg" alt="Thamuz" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Thamuz</h3>
+                    <p class="hero-class">Fighter</p>
+                    <p class="hero-description">Tanky fighter with sustained damage. Excels in prolonged fights.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Easy</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Sustained Damage</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Focused CC</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Bangbang, Burst Damage, Escape Heroes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gold Lane Heroes (Marksmen) -->
+            <div class="hero-card animate-on-scroll" data-lane="gold">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/BEATRIX.jpg" alt="Beatrix" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Beatrix</h3>
+                    <p class="hero-class">Marksman</p>
+                    <p class="hero-description">Versatile marksman with multiple weapons. Scales hard into late game.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Hard</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Late Game Carry</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Early Game Weak</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Assassins, Early Game Pressure</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="gold">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/BRODY.jpg" alt="Brody" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Brody</h3>
+                    <p class="hero-class">Marksman</p>
+                    <p class="hero-description">Burst marksman with high single-target damage. Good for securing kills.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Medium</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Burst Damage</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>AoE Spells</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Mobile Heroes, Mages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jungle Heroes -->
+            <div class="hero-card animate-on-scroll" data-lane="jungle">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/FANNY.jpg" alt="Fanny" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Fanny</h3>
+                    <p class="hero-class">Assassin</p>
+                    <p class="hero-description">High-skill assassin with incredible mobility. Best ganker in the game.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Very Hard</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Gank Potential</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>High Skill Floor</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Ling, Hayabusa, CC Chains</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="jungle">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/LANCELOT.jpg" alt="Lancelot" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Lancelot</h3>
+                    <p class="hero-class">Assassin</p>
+                    <p class="hero-description">Mobile fighter capable of quick bursts. Great for diving into fights.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Medium</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Team Fight Initiator</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Immobilization</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Grock, CC, Defensive Items</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mid Lane Heroes -->
+            <div class="hero-card animate-on-scroll" data-lane="mid">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/LUOYI.jpg" alt="Luo Yi" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Luo Yi</h3>
+                    <p class="hero-class">Mage</p>
+                    <p class="hero-description">Control mage with great team fight presence. Excellent poke damage.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Medium</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Area Control</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Reliant on CD</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Mobile Assassins, Burst</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="mid">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/KAGURA.jpg" alt="Kagura" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Kagura</h3>
+                    <p class="hero-class">Mage</p>
+                    <p class="hero-description">High-skill mage with utility and damage. Great playmaker ability.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Hard</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Versatility</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>High Skill Requirement</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Silences, Quick Burst</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roam Heroes -->
+            <div class="hero-card animate-on-scroll" data-lane="roam">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/ANGELA.jpg" alt="Angela" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Angela</h3>
+                    <p class="hero-class">Support</p>
+                    <p class="hero-description">Healer support with incredible utility. Best support in the meta.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Easy</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Team Protection</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Low Damage</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Silence, Quick Burst</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="roam">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/TIGREAL.jpg" alt="Tigreal" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Tigreal</h3>
+                    <p class="hero-class">Tank</p>
+                    <p class="hero-description">Initiator tank with strong crowd control. Great for securing objectives.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Easy</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Team Initiation</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Positioning Reliant</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Burst Damage, Kiting</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card animate-on-scroll" data-lane="roam">
+                <div class="hero-card-header">
+                    <div class="hero-icon" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Hero Icons/KAJA.jpg" alt="Kaja" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="hero-card-body">
+                    <h3 class="hero-name">Kaja</h3>
+                    <p class="hero-class">Support</p>
+                    <p class="hero-description">Roaming support with great gank potential. Enables teammates.</p>
+                    
+                    <div class="hero-details">
+                        <div class="detail-item">
+                            <strong>Difficulty:</strong> <span>Medium</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Strength:</strong> <span>Gank Support</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Weakness:</strong> <span>Mana Intensive</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-counters">
+                        <p><strong>Countered by:</strong> Mobile ADC, CC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Level Up - Mobile Legends Beginner's Guide.</p>
+        </div>
+    </footer>
+
+    <style>
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .hero-card {
+            background: var(--bg-dark-3);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            border-color: var(--accent-blue);
+        }
+
+        .hero-card-header {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .hero-card:hover .hero-card-header::before {
+            left: 100%;
+        }
+
+        .hero-icon {
+            font-size: 5rem;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-card-body {
+            padding: 1.5rem;
+        }
+
+        .hero-name {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-class {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .hero-details {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .detail-item {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item strong {
+            color: var(--primary-color);
+        }
+
+        .detail-item span {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .hero-counters {
+            padding-top: 1rem;
+            border-top: 1px solid var(--primary-color);
+        }
+
+        .hero-counters p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .hero-counters strong {
+            color: var(--accent-red);
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .hero-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        function filterHeroes(lane) {
+            const cards = document.querySelectorAll('.hero-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (lane === 'all' || card.getAttribute('data-lane') === lane) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 10);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

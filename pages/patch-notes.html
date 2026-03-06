@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patch Notes - Level Up</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-text">⚔️</div>
+                </div>
+                <h1 class="brand-title">Level Up</h1>
+            </div>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="lanes-guide.html" class="nav-link">Lanes Guide</a></li>
+                    <li><a href="heroes.html" class="nav-link">Heroes</a></li>
+                    <li><a href="items.html" class="nav-link">Items</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="patch-notes.html" class="nav-link active">Patch Notes</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <h1 class="page-title">📋 Patch Notes</h1>
+        <p class="page-subtitle">Stay updated with the latest changes and meta shifts</p>
+
+        <!-- Version Selector -->
+        <div class="version-selector">
+            <button class="version-btn active" onclick="switchVersion('current')">Current Version 1.7.6X</button>
+            <button class="version-btn" onclick="switchVersion('previous')">Previous Version 1.7.5X</button>
+            <button class="version-btn" onclick="switchVersion('upcoming')">Upcoming Version 1.7.7X</button>
+        </div>
+
+        <!-- Current Version -->
+        <div class="version-content active" id="current-version">
+            <div class="version-header">
+                <h2>Version 1.7.6X - Current Meta</h2>
+                <p>Released: February 2026</p>
+            </div>
+
+            <!-- Change Overview -->
+            <div class="changes-overview">
+                <div class="change-stat animate-on-scroll">
+                    <div class="stat-number">15</div>
+                    <p>Heroes Buffed</p>
+                </div>
+                <div class="change-stat animate-on-scroll">
+                    <div class="stat-number">8</div>
+                    <p>Heroes Nerfed</p>
+                </div>
+                <div class="change-stat animate-on-scroll">
+                    <div class="stat-number">5</div>
+                    <p>Items Changed</p>
+                </div>
+                <div class="change-stat animate-on-scroll">
+                    <div class="stat-number">3</div>
+                    <p>New Heroes</p>
+                </div>
+            </div>
+
+            <!-- Hero Changes Chart -->
+            <div class="chart-container animate-on-scroll">
+                <h3>Hero Adjustment Summary</h3>
+                <canvas id="heroChangesChart"></canvas>
+            </div>
+
+            <!-- Detailed Changes -->
+            <div class="changes-grid">
+                <!-- Buffs -->
+                <div class="change-section animate-on-scroll">
+                    <h3 class="buff-title">⬆️ Hero Buffs</h3>
+                    <div class="change-list">
+                        <div class="change-item buff">
+                            <div class="hero-name-change">🦁 Roger</div>
+                            <p><strong>Change:</strong> Increased wolf form attack speed by 10%</p>
+                            <p><strong>Reason:</strong> Underperforming in EXP lane meta</p>
+                        </div>
+                        <div class="change-item buff">
+                            <div class="hero-name-change">❤️ Angela</div>
+                            <p><strong>Change:</strong> Heal amount increased from 120 to 140</p>
+                            <p><strong>Reason:</strong> Improve support viability in late game</p>
+                        </div>
+                        <div class="change-item buff">
+                            <div class="hero-name-change">🥋 Chou</div>
+                            <p><strong>Change:</strong> Reduced cooldown on primary skill by 1 second</p>
+                            <p><strong>Reason:</strong> Enhance outplay potential</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nerfs -->
+                <div class="change-section animate-on-scroll">
+                    <h3 class="nerf-title">⬇️ Hero Nerfs</h3>
+                    <div class="change-list">
+                        <div class="change-item nerf">
+                            <div class="hero-name-change">🎯 Beatrix</div>
+                            <p><strong>Change:</strong> Attack damage reduced by 5</p>
+                            <p><strong>Reason:</strong> Overpowered in bot lane throughout patch</p>
+                        </div>
+                        <div class="change-item nerf">
+                            <div class="hero-name-change">🎪 Kagura</div>
+                            <p><strong>Change:</strong> Ultimate ability cooldown increased from 30s to 35s</p>
+                            <p><strong>Reason:</strong> Too much team fight control</p>
+                        </div>
+                        <div class="change-item nerf">
+                            <div class="hero-name-change">🪂 Fanny</div>
+                            <p><strong>Change:</strong> Energy regeneration reduced by 2 points</p>
+                            <p><strong>Reason:</strong> Too consistent in ganking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Changes -->
+            <div class="items-changes-section animate-on-scroll">
+                <h3>🛡️ Item Changes</h3>
+                <div class="items-change-grid">
+                    <div class="item-change buff">
+                        <h4>Holy Crystal</h4>
+                        <p><strong>Buff:</strong> Magic power amplification increased from 25% to 30%</p>
+                    </div>
+                    <div class="item-change nerf">
+                        <h4>Shadow Blade</h4>
+                        <p><strong>Nerf:</strong> Physical attack reduced from 80 to 75</p>
+                    </div>
+                    <div class="item-change buff">
+                        <h4>Brute Force Breastplate</h4>
+                        <p><strong>Buff:</strong> Shield regeneration increased by 50 HP</p>
+                    </div>
+                    <div class="item-change nerf">
+                        <h4>Berserker's Fury</h4>
+                        <p><strong>Nerf:</strong> Critical damage reduced from 40% to 35%</p>
+                    </div>
+                    <div class="item-change rework">
+                        <h4>Lightning Truncheon</h4>
+                        <p><strong>Rework:</strong> Added passive that bounces lightning between enemies</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Changes -->
+            <div class="map-changes-section animate-on-scroll">
+                <h3>🗺️ Map & System Changes</h3>
+                <ul class="changes-list">
+                    <li><strong>Lithowanderer Spawn:</strong> Time increased from 6:30 to 7:00</li>
+                    <li><strong>Vision Ward Duration:</strong> Increased from 3 minutes to 4 minutes</li>
+                    <li><strong>Gold Buff Duration:</strong> Reduced from 5 minutes to 4 minutes</li>
+                    <li><strong>Minion Base Attack:</strong> Increased by 5 at start</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Previous Version -->
+        <div class="version-content" id="previous-version">
+            <div class="version-header">
+                <h2>Version 1.7.5X - Previous Patch</h2>
+                <p>Released: January 2026</p>
+            </div>
+
+            <div class="version-info">
+                <p><strong>This patch focused on:</strong> Assassin adjustments and item balance</p>
+                
+                <div class="highlights">
+                    <h3>Key Changes</h3>
+                    <ul>
+                        <li>Lancelot received major buff to mobility cooldowns</li>
+                        <li>Shadow Blade was the most overpowered item</li>
+                        <li>Support heroes were generally weak in this meta</li>
+                        <li>Jungle farming routes were optimized</li>
+                        <li>Total of 12 hero adjustments</li>
+                    </ul>
+                </div>
+
+                <div class="meta-snapshot">
+                    <h3>Meta Snapshot</h3>
+                    <p>S-tier: Hanni, Kagura, Chou, Tigreal</p>
+                    <p>A-tier: Roger, Brody, Fanny, Angela (weaker in this meta)</p>
+                    <p>Jungle meta was dominated by assassins and mobility-based heroes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Version -->
+        <div class="version-content" id="upcoming-version">
+            <div class="version-header">
+                <h2>Version 1.7.7X - Upcoming Patch (Predicted)</h2>
+                <p>Expected Release: March 2026</p>
+            </div>
+
+            <div class="upcoming-info">
+                <div class="prediction-card animate-on-scroll">
+                    <h3>Expected Adjustments</h3>
+                    <p>Based on current balance, the next patch will likely include:</p>
+                    <ul>
+                        <li>Counter-balancing for Angela support buffs</li>
+                        <li>Adjustments to overpowered marksmen items</li>
+                        <li>Potential new hero release in mid lane</li>
+                        <li>Quality of life improvements</li>
+                    </ul>
+                </div>
+
+                <div class="speculation-card animate-on-scroll">
+                    <h3>⚠️ Balance Speculation</h3>
+                    <p>These are predictions based on current meta trends:</p>
+                    <ul>
+                        <li>Expect more support-focused items</li>
+                        <li>Tank heroes might receive power boosts</li>
+                        <li>Cooldown reduction might be adjusted</li>
+                    </ul>
+                </div>
+
+                <p class="disclaimer">⚠️ <strong>Note:</strong> This is speculative and based on historical patterns. Actual changes will be announced by Moonton Games.</p>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <section class="quick-reference">
+            <h2>Quick Reference: Change Types</h2>
+            <div class="reference-grid">
+                <div class="ref-card buff">
+                    <h4>⬆️ Buff</h4>
+                    <p>Hero or item is made stronger</p>
+                </div>
+                <div class="ref-card nerf">
+                    <h4>⬇️ Nerf</h4>
+                    <p>Hero or item is made weaker</p>
+                </div>
+                <div class="ref-card rework">
+                    <h4>🔄 Rework</h4>
+                    <p>Hero or item mechanics completely changed</p>
+                </div>
+                <div class="ref-card adjustment">
+                    <h4>⚙️ Adjustment</h4>
+                    <p>Minor tweaks to existing mechanics</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Level Up - Mobile Legends Beginner's Guide.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Version Selector */
+        .version-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .version-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-dark-3);
+            color: var(--text-light);
+            border: 2px solid var(--text-muted);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .version-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .version-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        .version-content {
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .version-content.active {
+            display: block;
+        }
+
+        .version-header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .version-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .version-header p {
+            color: var(--text-muted);
+        }
+
+        /* Changes Overview */
+        .changes-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .change-stat {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: #000;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .change-stat p {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: var(--bg-dark-3);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .chart-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Changes Grid */
+        .changes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .change-section {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .buff-title {
+            color: #4caf50;
+        }
+
+        .nerf-title {
+            color: #f44336;
+        }
+
+        .change-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .change-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .change-item {
+            padding: 1rem;
+            border-left: 4px solid;
+            border-radius: 5px;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .change-item.buff {
+            border-left-color: #4caf50;
+        }
+
+        .change-item.nerf {
+            border-left-color: #f44336;
+        }
+
+        .hero-name-change {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .change-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.5;
+        }
+
+        /* Items Changes */
+        .items-changes-section {
+            background: var(--bg-dark-3);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .items-changes-section h3 {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .items-change-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .item-change {
+            padding: 1rem;
+            border-left: 4px solid;
+            border-radius: 5px;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .item-change.buff {
+            border-left-color: #4caf50;
+        }
+
+        .item-change.nerf {
+            border-left-color: #f44336;
+        }
+
+        .item-change.rework {
+            border-left-color: var(--primary-color);
+        }
+
+        .item-change h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-change p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Map Changes */
+        .map-changes-section {
+            background: var(--bg-dark-3);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .map-changes-section h3 {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .changes-list {
+            list-style: none;
+        }
+
+        .changes-list li {
+            color: var(--text-muted);
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .changes-list strong {
+            color: var(--primary-color);
+        }
+
+        /* Version Info */
+        .version-info {
+            background: var(--bg-dark-3);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .version-info p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .version-info strong {
+            color: var(--primary-color);
+        }
+
+        .highlights, .meta-snapshot {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlights h3, .meta-snapshot h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .highlights ul, .meta-snapshot ul {
+            list-style: none;
+        }
+
+        .highlights li, .meta-snapshot li {
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .highlights li::before, .meta-snapshot li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Upcoming Info */
+        .upcoming-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .prediction-card, .speculation-card {
+            background: var(--bg-dark-3);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .prediction-card h3, .speculation-card h3 {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .prediction-card p, .speculation-card p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .prediction-card ul, .speculation-card ul {
+            list-style: none;
+        }
+
+        .prediction-card li, .speculation-card li {
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .prediction-card li::before, .speculation-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            background: rgba(244, 67, 54, 0.1);
+            border: 2px solid #f44336;
+            padding: 1rem;
+            border-radius: 5px;
+            color: var(--text-muted);
+        }
+
+        /* Quick Reference */
+        .quick-reference {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-dark-2), var(--bg-dark-3));
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .quick-reference h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ref-card {
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        .ref-card.buff {
+            border-color: #4caf50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .ref-card.nerf {
+            border-color: #f44336;
+            background: rgba(244, 67, 54, 0.1);
+        }
+
+        .ref-card.rework {
+            border-color: var(--primary-color);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .ref-card.adjustment {
+            border-color: var(--accent-blue);
+            background: rgba(33, 150, 243, 0.1);
+        }
+
+        .ref-card h4 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .ref-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .changes-overview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .changes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reference-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        // Version switching
+        function switchVersion(version) {
+            document.querySelectorAll('.version-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(version + '-version').classList.add('active');
+
+            document.querySelectorAll('.version-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Initialize Chart
+        const ctx = document.getElementById('heroChangesChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Buffs', 'Nerfs', 'Reworks', 'Balance Adjustments'],
+                    datasets: [{
+                        label: "Remove Graph",
+                        data: [15, 8, 2, 5],
+                        backgroundColor: [
+                            'rgba(76, 175, 80, 0.6)',
+                            'rgba(244, 67, 54, 0.6)',
+                            'rgba(212, 175, 55, 0.6)',
+                            'rgba(33, 150, 243, 0.6)'
+                        ],
+                        borderColor: [
+                            '#4caf50',
+                            '#f44336',
+                            '#d4af37',
+                            '#2196f3'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e0e0e0'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                color: '#999999'
+                            },
+                            grid: {
+                                color: 'rgba(212, 175, 55, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#999999'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

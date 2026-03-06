@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier List - Level Up</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-text">⚔️</div>
+                </div>
+                <h1 class="brand-title">Level Up</h1>
+            </div>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="lanes-guide.html" class="nav-link">Lanes Guide</a></li>
+                    <li><a href="heroes.html" class="nav-link">Heroes</a></li>
+                    <li><a href="items.html" class="nav-link">Items</a></li>
+                    <li><a href="tier-list.html" class="nav-link active">Tier List</a></li>
+                    <li><a href="patch-notes.html" class="nav-link">Patch Notes</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <h1 class="page-title">📊 Tier List & Team Builder</h1>
+        <p class="page-subtitle">Check current meta heroes and build your perfect team composition</p>
+
+        <!-- Tabs -->
+        <div class="tierlist-tabs">
+            <button class="tab-btn active" onclick="switchTab('meta')">Meta Tier List</button>
+            <button class="tab-btn" onclick="switchTab('personal')">Personal Tier List</button>
+            <button class="tab-btn" onclick="switchTab('team')">Team Builder</button>
+        </div>
+
+        <!-- Meta Tier List Tab -->
+        <div class="tab-content active" id="meta-tab">
+            <h2 class="section-title">Current Patch Meta Tier List</h2>
+            <p class="section-subtitle">Heroes ranked by current strength in the meta</p>
+
+            <div class="tier-list">
+                <div class="tier-row s-tier">
+                    <div class="tier-label">S</div>
+                    <div class="tier-heroes">
+                        <div class="tier-hero animate-on-scroll">Beatrix</div>
+                        <div class="tier-hero animate-on-scroll">Kagura</div>
+                        <div class="tier-hero animate-on-scroll">Angela</div>
+                    </div>
+                </div>
+
+                <div class="tier-row s-tier">
+                    <div class="tier-label">A</div>
+                    <div class="tier-heroes">
+                        <div class="tier-hero animate-on-scroll">Luo Yi</div>
+                        <div class="tier-hero animate-on-scroll">Chou</div>
+                        <div class="tier-hero animate-on-scroll">Roger</div>
+                        <div class="tier-hero animate-on-scroll">Kaja</div>
+                    </div>
+                </div>
+
+                <div class="tier-row a-tier">
+                    <div class="tier-label">B</div>
+                    <div class="tier-heroes">
+                        <div class="tier-hero animate-on-scroll">Brody</div>
+                        <div class="tier-hero animate-on-scroll">Tigreal</div>
+                        <div class="tier-hero animate-on-scroll">Lancelot</div>
+                    </div>
+                </div>
+
+                <div class="tier-row a-tier">
+                    <div class="tier-label">C</div>
+                    <div class="tier-heroes">
+                        <div class="tier-hero animate-on-scroll">Thamuz</div>
+                        <div class="tier-hero animate-on-scroll">Fanny</div>
+                    </div>
+                </div>
+
+                <div class="tier-row b-tier">
+                    <div class="tier-label">F</div>
+                    <div class="tier-heroes">
+                        <div class="tier-hero animate-on-scroll">Harith</div>
+                        <div class="tier-hero animate-on-scroll">Estes</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tier-info">
+                <div class="info-card">
+                    <h3>S+ Tier</h3>
+                    <p><strong>Overpowered:</strong> These heroes are extremely strong in the current meta. Pick them whenever possible.</p>
+                </div>
+                <div class="info-card">
+                    <h3>S Tier</h3>
+                    <p><strong>Excellent:</strong> Very strong heroes that are safe picks for most matchups.</p>
+                </div>
+                <div class="info-card">
+                    <h3>A Tier</h3>
+                    <p><strong>Great:</strong> Strong heroes with good matchups. Can carry games with proper play.</p>
+                </div>
+                <div class="info-card">
+                    <h3>B Tier</h3>
+                    <p><strong>Good:</strong> Solid heroes that can work. Require good game knowledge to maximize.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Tier List Tab -->
+        <div class="tab-content" id="personal-tab">
+            <h2 class="section-title">Create Your Personal Tier List</h2>
+            <p class="section-subtitle">Rank heroes based on your preference and playstyle</p>
+
+            <div class="personal-tierlist-container">
+                <div class="available-heroes">
+                    <h3>Available Heroes</h3>
+                    <div class="heroes-pool" id="heroesPool">
+                        <div class="hero-item" draggable="true">Beatrix</div>
+                        <div class="hero-item" draggable="true">Brody</div>
+                        <div class="hero-item" draggable="true">Chou</div>
+                        <div class="hero-item" draggable="true">Roger</div>
+                        <div class="hero-item" draggable="true">Fanny</div>
+                        <div class="hero-item" draggable="true">Lancelot</div>
+                        <div class="hero-item" draggable="true">Kagura</div>
+                        <div class="hero-item" draggable="true">Luo Yi</div>
+                        <div class="hero-item" draggable="true">Angela</div>
+                        <div class="hero-item" draggable="true">Tigreal</div>
+                    </div>
+                </div>
+
+                <div class="tier-builder">
+                    <div class="tier-row-builder top">
+                        <span>S+</span>
+                        <div class="drop-zone" data-tier="splus"></div>
+                    </div>
+                    <div class="tier-row-builder">
+                        <span>S</span>
+                        <div class="drop-zone" data-tier="s"></div>
+                    </div>
+                    <div class="tier-row-builder">
+                        <span>A</span>
+                        <div class="drop-zone" data-tier="a"></div>
+                    </div>
+                    <div class="tier-row-builder">
+                        <span>B</span>
+                        <div class="drop-zone" data-tier="b"></div>
+                    </div>
+                    <div class="tier-row-builder">
+                        <span>C</span>
+                        <div class="drop-zone" data-tier="c"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tier-actions">
+                <button class="btn btn-primary" onclick="resetTierList()">Reset Tier List</button>
+                <button class="btn btn-secondary" onclick="downloadTierList()">Download Image</button>
+            </div>
+        </div>
+
+        <!-- Team Builder Tab -->
+        <div class="tab-content" id="team-tab">
+            <h2 class="section-title">5v5 Team Builder</h2>
+            <p class="section-subtitle">Build your team composition and visualize lane assignments</p>
+            <p style="color: var(--accent-blue); margin-bottom: 2rem; font-weight: 500;">💡 Drag heroes from the Hero Pool onto the map circles to assign them to lanes!</p>
+
+            <div class="team-builder-container">
+                <div class="available-heroes-team">
+                    <h3>Hero Pool</h3>
+                    <div class="heroes-pool-team" id="teamHeroesPool">
+                        <div class="hero-item-team" draggable="true">Beatrix 🎯</div>
+                        <div class="hero-item-team" draggable="true">Chou 🥋</div>
+                        <div class="hero-item-team" draggable="true">Fanny 🪂</div>
+                        <div class="hero-item-team" draggable="true">Kagura 🎪</div>
+                        <div class="hero-item-team" draggable="true">Angela ❤️</div>
+                    </div>
+                </div>
+
+                <div class="team-map">
+                    <h3>Top View Map</h3>
+                    <svg viewBox="0 0 400 600" class="map-svg">
+                        <!-- Map background -->
+                        <rect width="400" height="600" fill="#0f0f0f" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- Lane markings -->
+                        <line x1="0" y1="150" x2="400" y2="150" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+                        <line x1="0" y1="300" x2="400" y2="300" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+                        <line x1="0" y1="450" x2="400" y2="450" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+                        
+                        <!-- Lane labels -->
+                        <text x="30" y="80" fill="#d4af37" font-size="12">EXP</text>
+                        <text x="30" y="270" fill="#d4af37" font-size="12">MID</text>
+                        <text x="130" y="270" fill="#d4af37" font-size="12">JUNGLE</text>
+                        <text x="230" y="270" fill="#d4af37" font-size="12">ROAM</text>
+                        <text x="30" y="480" fill="#d4af37" font-size="12">GOLD</text>
+                        
+                        <!-- Drop zones for heroes -->
+                        <g id="dropZones" class="drop-zones">
+                            <circle cx="100" cy="100" r="25" fill="rgba(212, 175, 55, 0.2)" stroke="#d4af37" stroke-width="1" class="zone" data-position="0"/>
+                            <circle cx="100" cy="300" r="25" fill="rgba(212, 175, 55, 0.2)" stroke="#d4af37" stroke-width="1" class="zone" data-position="1"/>
+                            <circle cx="200" cy="300" r="25" fill="rgba(212, 175, 55, 0.2)" stroke="#d4af37" stroke-width="1" class="zone" data-position="2"/>
+                            <circle cx="300" cy="300" r="25" fill="rgba(212, 175, 55, 0.2)" stroke="#d4af37" stroke-width="1" class="zone" data-position="3"/>
+                            <circle cx="100" cy="500" r="25" fill="rgba(212, 175, 55, 0.2)" stroke="#d4af37" stroke-width="1" class="zone" data-position="4"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="team-summary">
+                    <h3>Team Composition</h3>
+                    <div class="team-roles">
+                        <div class="role-slot">
+                            <div class="role-label">EXP Lane</div>
+                            <div class="role-hero" id="slot-0">Empty</div>
+                        </div>
+                        <div class="role-slot">
+                            <div class="role-label">Mid Lane</div>
+                            <div class="role-hero" id="slot-1">Empty</div>
+                        </div>
+                        <div class="role-slot">
+                            <div class="role-label">Jungle</div>
+                            <div class="role-hero" id="slot-2">Empty</div>
+                        </div>
+                        <div class="role-slot">
+                            <div class="role-label">Gold Lane</div>
+                            <div class="role-hero" id="slot-4">Empty</div>
+                        </div>
+                        <div class="role-slot">
+                            <div class="role-label">Roam</div>
+                            <div class="role-hero" id="slot-3">Empty</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="resetTeam()">Reset Team</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Level Up - Mobile Legends Beginner's Guide.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Tabs */
+        .tierlist-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--text-light);
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: -2px;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Tier List Styles */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .tier-list {
+            background: var(--bg-dark-3);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .tier-row {
+            display: flex;
+            border-bottom: 1px solid var(--primary-color);
+            padding: 1rem;
+            align-items: stretch;
+        }
+
+        .tier-row:last-child {
+            border-bottom: none;
+        }
+
+        .tier-label {
+            min-width: 60px;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .s-tier .tier-label {
+            background: linear-gradient(135deg, #ff4444, #ff8844);
+        }
+
+        .a-tier .tier-label {
+            background: linear-gradient(135deg, #ffdd44, #ffaa44);
+        }
+
+        .b-tier .tier-label {
+            background: linear-gradient(135deg, #44ff44, #44ddff);
+        }
+
+        .tier-heroes {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1rem;
+            align-items: center;
+            flex: 1;
+        }
+
+        .tier-hero {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--text-light);
+            font-weight: 500;
+            border: 1px solid var(--primary-color);
+        }
+
+        .tier-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Personal Tier List */
+        .personal-tierlist-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .available-heroes, .available-heroes-team {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .available-heroes h3, .available-heroes-team h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .heroes-pool, .heroes-pool-team {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .hero-item, .hero-item-team {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: #000;
+            padding: 0.8rem 1rem;
+            border-radius: 5px;
+            cursor: grab;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            user-select: none;
+            border: 2px solid transparent;
+        }
+
+        .hero-item:hover, .hero-item-team:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            border-color: #fff;
+        }
+
+        .hero-item:active, .hero-item-team:active {
+            cursor: grabbing;
+        }
+
+        /* Tier Builder */
+        .tier-builder {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .tier-row-builder {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .tier-row-builder span {
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            min-width: 40px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .drop-zone {
+            flex: 1;
+            min-height: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px dashed var(--primary-color);
+            border-radius: 5px;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-content: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone.drag-over {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        /* Team Builder */
+        .team-builder-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-map {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .team-map h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .map-svg {
+            width: 100%;
+            height: auto;
+            background: var(--bg-dark-2);
+            border-radius: 5px;
+        }
+
+        .zone {
+            cursor: grab;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 0px rgba(212, 175, 55, 0));
+        }
+
+        .zone:hover {
+            r: 32;
+            fill: rgba(212, 175, 55, 0.4);
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+            cursor: grab;
+        }
+
+        .zone:active {
+            cursor: grabbing;
+        }
+
+        .team-summary {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .team-summary h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .team-roles {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .role-slot {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .role-label {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-hero {
+            color: var(--text-muted);
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .role-hero.filled {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* Tier Actions */
+        .tier-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .team-builder-container {
+                grid-template-columns: 1fr;
+            }
+
+            .personal-tierlist-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tierlist-tabs {
+                flex-direction: column;
+            }
+
+            .tier-row {
+                flex-direction: column;
+            }
+
+            .tier-label {
+                min-width: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--primary-color);
+            }
+
+            .tier-heroes {
+                justify-content: space-around;
+            }
+
+            .tier-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        // Tab switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Drag and Drop for Personal Tier List
+        let draggedElement = null;
+
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.classList.contains('hero-item')) {
+                draggedElement = e.target;
+                e.target.style.opacity = '0.5';
+            }
+        });
+
+        document.addEventListener('dragend', (e) => {
+            if (draggedElement) {
+                draggedElement.style.opacity = '1';
+            }
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('drag-over');
+            });
+
+            zone.addEventListener('dragleave', () => {
+                zone.classList.remove('drag-over');
+            });
+
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('drag-over');
+                
+                if (draggedElement) {
+                    const clone = draggedElement.cloneNode(true);
+                    clone.classList.add('hero-item');
+                    
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '✕';
+                    closeBtn.style.cssText = 'position: absolute; top: 0; right: 0; background: none; border: none; color: #fff; cursor: pointer; font-size: 1.2rem;';
+                    closeBtn.onclick = function() {
+                        clone.remove();
+                    };
+                    
+                    clone.style.position = 'relative';
+                    clone.appendChild(closeBtn);
+                    zone.appendChild(clone);
+                }
+            });
+        });
+
+        // Reset Tier List
+        function resetTierList() {
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.innerHTML = '';
+            });
+        }
+
+        // Download Tier List (placeholder)
+        function downloadTierList() {
+            alert('Tier list download feature coming soon!');
+        }
+
+        // Team Builder functionality
+        let teamSlots = {};
+        let draggedHero = null;
+
+        // Setup drag start for hero items
+        function setupHeroDrag() {
+            document.querySelectorAll('.hero-item-team').forEach(hero => {
+                hero.addEventListener('dragstart', (e) => {
+                    draggedHero = e.target.textContent.trim();
+                    e.target.style.opacity = '0.5';
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', draggedHero);
+                });
+
+                hero.addEventListener('dragend', (e) => {
+                    e.target.style.opacity = '1';
+                    draggedHero = null;
+                });
+            });
+        }
+
+        // Setup drag handlers for SVG zones
+        document.querySelectorAll('.zone').forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+                zone.setAttribute('fill', 'rgba(212, 175, 55, 0.4)');
+            });
+
+            zone.addEventListener('dragleave', (e) => {
+                zone.setAttribute('fill', 'rgba(212, 175, 55, 0.2)');
+            });
+
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const heroName = e.dataTransfer.getData('text/plain');
+                const position = zone.getAttribute('data-position');
+                
+                if (heroName && position !== null) {
+                    // Update team slots
+                    teamSlots[position] = heroName;
+                    
+                    // Update the team summary display
+                    const slotElement = document.getElementById('slot-' + position);
+                    slotElement.textContent = heroName;
+                    slotElement.classList.add('filled');
+                    
+                    // Add visual indicator on map
+                    zone.setAttribute('fill', 'rgba(212, 175, 55, 0.5)');
+                    
+                    // Add label to zone showing which hero is there
+                    if (zone.nextElementSibling && zone.nextElementSibling.tagName === 'text') {
+                        zone.nextElementSibling.remove();
+                    }
+                    
+                    const textLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    const cx = zone.getAttribute('cx');
+                    const cy = zone.getAttribute('cy');
+                    textLabel.setAttribute('x', cx);
+                    textLabel.setAttribute('y', cy);
+                    textLabel.setAttribute('text-anchor', 'middle');
+                    textLabel.setAttribute('dy', '0.3em');
+                    textLabel.setAttribute('fill', '#000');
+                    textLabel.setAttribute('font-size', '10');
+                    textLabel.setAttribute('font-weight', 'bold');
+                    textLabel.textContent = heroName.split(' ')[0];
+                    zone.parentElement.appendChild(textLabel);
+                }
+                
+                zone.setAttribute('fill', 'rgba(212, 175, 55, 0.2)');
+            });
+        });
+
+        function resetTeam() {
+            document.querySelectorAll('.role-hero').forEach(slot => {
+                slot.textContent = 'Empty';
+                slot.classList.remove('filled');
+            });
+            
+            // Reset SVG zones
+            document.querySelectorAll('.zone').forEach(zone => {
+                zone.setAttribute('fill', 'rgba(212, 175, 55, 0.2)');
+            });
+            
+            // Remove text labels from zones
+            document.querySelectorAll('svg text').forEach(text => {
+                if (text.getAttribute('font-size') === '10') {
+                    text.remove();
+                }
+            });
+            
+            teamSlots = {};
+        }
+
+        // Initialize hero drag on page load
+        setupHeroDrag();
+    </script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items - Level Up</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-text">⚔️</div>
+                </div>
+                <h1 class="brand-title">Level Up</h1>
+            </div>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="lanes-guide.html" class="nav-link">Lanes Guide</a></li>
+                    <li><a href="heroes.html" class="nav-link">Heroes</a></li>
+                    <li><a href="items.html" class="nav-link active">Items</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="patch-notes.html" class="nav-link">Patch Notes</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <h1 class="page-title">🛡️ Items Database</h1>
+        <p class="page-subtitle">Explore all items and find the perfect builds for your heroes</p>
+
+        <!-- Filter Section -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterItems(this, 'all')">All Items</button>
+            <button class="filter-btn" onclick="filterItems(this, 'tank')">Tank</button>
+            <button class="filter-btn" onclick="filterItems(this, 'mage')">Mage</button>
+            <button class="filter-btn" onclick="filterItems(this, 'marksman')">Marksman</button>
+            <button class="filter-btn" onclick="filterItems(this, 'assassin')">Assassin</button>
+            <button class="filter-btn" onclick="filterItems(this, 'fighter')">Fighter</button>
+            <button class="filter-btn" onclick="filterItems(this, 'support')">Support</button>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="items-grid" id="itemsGrid">
+            <!-- Tank Items -->
+            <div class="item-card animate-on-scroll" data-category="tank">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/BRUTEFORCE.jpg" alt="Brute Force Breastplate" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Brute Force Breastplate</h3>
+                    <p class="item-price">💰 1950 Gold</p>
+                    <p class="item-description">Increase physical defense and provide shield health based on max HP.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Physical Defense:</strong> +250</div>
+                        <div class="stat-line"><strong>Max HP:</strong> +500</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Adamantine Armor + Timber Chest (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Tanks against physical teams</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card animate-on-scroll" data-category="tank">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/ATHENASHIELD.jpg" alt="Athena's Shield" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Athena's Shield</h3>
+                    <p class="item-price">💰 2000 Gold</p>
+                    <p class="item-description">Gain magical defense and shield that regenerates when being attacked by magic damage.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Magical Defense:</strong> +180</div>
+                        <div class="stat-line"><strong>HP Shield:</strong> +250 every 5 seconds</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Mystical Armor + Hardened Armor (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Tanks against mage teams</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mage Items -->
+            <div class="item-card animate-on-scroll" data-category="mage">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/HOLYCRYSTAL.jpeg" alt="Holy Crystal" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Holy Crystal</h3>
+                    <p class="item-price">💰 2050 Gold</p>
+                    <p class="item-description">Amplify magical damage dealt. Increases magic power significantly.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Magic Power:</strong> +65</div>
+                        <div class="stat-line"><strong>Damage Amplification:</strong> +25%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Glowing Wand + Tome's Diary (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Mages needing late-game damage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card animate-on-scroll" data-category="mage">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/LIGHTNINGTRUNCHEON.jpg" alt="Lightning Truncheon" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Lightning Truncheon</h3>
+                    <p class="item-price">💰 1900 Gold</p>
+                    <p class="item-description">Deal extra magic damage on hit and chain lightning to nearby enemies.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Magic Power:</strong> +75</div>
+                        <div class="stat-line"><strong>Cooldown Reduction:</strong> +10%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Arcane Boots + Tome's Diary (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Mages with cooldown-based powers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marksman Items -->
+            <div class="item-card animate-on-scroll" data-category="marksman">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/BERSERKER'SFURY.jpg" alt="Berserker's Fury" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Berserker's Fury</h3>
+                    <p class="item-price">💰 2000 Gold</p>
+                    <p class="item-description">Increase physical attack and critical chance. Gain bonus damage on critical hits.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Physical Attack:</strong> +65</div>
+                        <div class="stat-line"><strong>Critical Chance:</strong> +25%</div>
+                        <div class="stat-line"><strong>Critical Damage:</strong> +40%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Halberd Blade + Claws (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Crit-based marksmen</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card animate-on-scroll" data-category="marksman">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/WINDTALKER.jpg" alt="Windtalker" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Windtalker</h3>
+                    <p class="item-price">💰 1900 Gold</p>
+                    <p class="item-description">Gain attack speed and movement speed. Generate lightning that deals extra damage.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Physical Attack:</strong> +30</div>
+                        <div class="stat-line"><strong>Attack Speed:</strong> +25%</div>
+                        <div class="stat-line"><strong>Movement Speed:</strong> +20%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Blade of Seven Seas + Swift Boots (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Attack-speed marksmen</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assassin Items -->
+            <div class="item-card animate-on-scroll" data-category="assassin">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/BLADEOFHEPTASEAS.jpg" alt="Blade of Heptaseas" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Blade of Heptaseas</h3>
+                    <p class="item-price">💰 1950 Gold</p>
+                    <p class="item-description">Best equipped by Physical Assassin that need to deal more damage and increase Crowd Control abilities.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Physical Attack:</strong> +70</div>
+                        <div class="stat-line"><strong>Physical Penetration:</strong> +15</div>
+                        <div class="stat-line"><strong>HP:</strong> +250</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Fury Hammer + Ogre Tomahawk (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Burst assassins</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card animate-on-scroll" data-category="assassin">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/HUNTERSTRIKE.jpg" alt="Hunter Strike" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Hunter Strike</h3>
+                    <p class="item-price">💰 2010 Gold</p>
+                    <p class="item-description">Best equipped by Physical Assassins that need to deal more damage and increase mobility.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Physical Attack:</strong> +80</div>
+                        <div class="stat-line"><strong>Physical Penetration:</strong> +15%</div>
+                        <div class="stat-line"><strong>Cooldown Reduction:</strong> +10%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Fury Hammer + Iron Hunting Bow + Dagger (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Armor-pen assassins</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fighter Items -->
+            <div class="item-card animate-on-scroll" data-category="fighter">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/WARAXE.jpg" alt="War Axe" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">War Axe</h3>
+                    <p class="item-price">💰 2100 Gold</p>
+                    <p class="item-description">Best equipped by Fighters that need good sustainability.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Physical Attack:</strong> +35</div>
+                        <div class="stat-line"><strong>HP:</strong> +400</div>
+                        <div class="stat-line"><strong>Cooldown Reduction:</strong> +10%</div>
+                        <div class="stat-line"><strong>Spell Vamp:</strong> +6%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Ogre Tomahawk + Iron Hunting Bow + Hero's Ring (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Sustain fighters</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Items -->
+            <div class="item-card animate-on-scroll" data-category="support">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/FLASKOFTHEOASIS.jpg" alt="Flask of the Oasis" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Flask of the Oasis</h3>
+                    <p class="item-price">💰 1850 Gold</p>
+                    <p class="item-description">Suitable for heroes with healing or shielding skills to support teammates.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>HP:</strong> +300</div>
+                        <div class="stat-line"><strong>Magic Power:</strong> +60</div>
+                        <div class="stat-line"><strong>Cooldown Reduction:</strong> +10%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Magic Wand + Book of Sages + Vitality Crystal (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Support mages</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card animate-on-scroll" data-category="support">
+                <div class="item-header">
+                    <div class="item-icon" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-color);"><img src="../Item Icons/ORACLE.jpg" alt="Oracle" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+                <div class="item-body">
+                    <h3 class="item-name">Oracle</h3>
+                    <p class="item-price">💰 1950 Gold</p>
+                    <p class="item-description">Increase magic defense and healing received. Grant shields to nearby allies.</p>
+                    
+                    <div class="item-stats">
+                        <div class="stat-line"><strong>Magical Defense:</strong> +150</div>
+                        <div class="stat-line"><strong>Max HP:</strong> +800</div>
+                        <div class="stat-line"><strong>Healing Boost:</strong>  +20%</div>
+                    </div>
+
+                    <div class="item-components">
+                        <h4>Build from:</h4>
+                        <p>Mystical Armor + Hardened Armor (Item combinations)</p>
+                    </div>
+
+                    <div class="item-use-case">
+                        <p><strong>Best for:</strong> Support mages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <section class="build-tips">
+            <h2>💡 Item Build Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>1. Know Your Role</h3>
+                    <p>Different roles need different items. Marksmen need attack speed, Mages need magic power, Tanks need defense.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>2. Counter-build</h3>
+                    <p>If enemy has physical heroes, build physical defense items. If they have mages, build magical defense.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>3. Build Progression</h3>
+                    <p>Buy items in order of efficiency. Early items should give quick power spikes for your role.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>4. Stat Checking</h3>
+                    <p>Always check which items have useful passives and actives. Synergy with your hero is important.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Level Up - Mobile Legends Beginner's Guide.</p>
+        </div>
+    </footer>
+
+    <style>
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .item-card {
+            background: var(--bg-dark-3);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+            border-color: var(--accent-blue);
+        }
+
+        .item-header {
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item-icon {
+            font-size: 4rem;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .item-body {
+            padding: 1.5rem;
+        }
+
+        .item-name {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-price {
+            color: var(--accent-purple);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .item-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .item-stats {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-line {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-line strong {
+            color: var(--accent-blue);
+        }
+
+        .item-components {
+            padding: 0.8rem 0;
+            border-top: 1px solid var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .item-components h4 {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-components p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .item-use-case p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .item-use-case strong {
+            color: var(--accent-green);
+        }
+
+        /* Build Tips Section */
+        .build-tips {
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--bg-dark-2), var(--bg-dark-3));
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .build-tips h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background: var(--bg-dark-3);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .tip-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .tip-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .items-grid {
+                gap: 1rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        function filterItems(button, category) {
+            const cards = document.querySelectorAll('.item-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 10);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
